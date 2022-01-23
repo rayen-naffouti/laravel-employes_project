@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Qualification extends Model
 {
-    protected $primarykey = 'QUALIF_CODE';
+    protected $primaryKey = 'QUALIF_CODE';
     public function personnels()
     {
-        // On supposant que chaque soutenance est assistée par un ou plusieurs enseignants
-        return $this->hasMany('App\Personnel','PERS_MAT_95');
+        return $this->hasMany(Personnel::class,'QUALIF_CODE','PERS_CODE_QUALIF');
     }
 }

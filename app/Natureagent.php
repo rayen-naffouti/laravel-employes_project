@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Natureagent extends Model
 {
-    protected $primarykey = 'NATAGENT_CODE_93';
+    protected $primaryKey = 'NATAGENT_CODE_93';
     public function personnels()
     {
         return $this->hasMany('App\Personnel','PERS_MAT_95');
