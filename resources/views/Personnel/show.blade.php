@@ -22,13 +22,12 @@
         <thead>
             <tr>
                 <th rowspan="2" data-checkbox="true" data-valign="middle"></th>
-                <th colspan="10" data-align="center">Personnel List</th>
+                <th colspan="9" data-align="center">{{ $personnels[1]->PERS_NOM  }}{{ $personnels[1]->PERS_PRENOM }} absence list</th>
             </tr>
             
             <tr>
-                <th data-field="ABS_MAT_95" data-sortable="true" data-switchable="false">ABS_MAT_95</th>
-                <th data-field="ABS_NUMORD_93" data-sortable="true" data-switchable="false">ABS_NUMORD_93</th>
-                <th data-field="ABS_NAT_9" data-sortable="true">ABS_NAT_9</th>
+                <th data-field="ABS_NUMORD_93" data-sortable="true" data-switchable="false">PERS_NOM</th>
+                <th data-field="ABS_NAT_9" data-sortable="true">LIBELLE_ABS</th>
                 <th data-field="ABS_CAT_9" data-sortable="true">ABS_CAT_9</th>
                 <th data-field="ABS_DATE_DEB" data-sortable="true">ABS_DATE_DEB</th>
                 <th data-field="ABS_PERDEB_X" data-sortable="true">ABS_PERDEB_X</th>
@@ -42,10 +41,10 @@
             <tbody>
             @foreach ($personnels as $personnel)
                 <tr>
+
                 <td></td>
-                <td >{{ $personnel->ABS_MAT_95  }}</td>
-                <td >{{ $personnel->ABS_NUMORD_93  }}</td>
-                <td >{{ $personnel->ABS_NAT_9  }}</td>
+                <td >{{ $personnel->PERS_NOM  }} {{ $personnel->PERS_PRENOM }}</td>
+                <td >{{ $personnel->LIBELLE_ABS   }}</td>
                 <td >{{ $personnel->ABS_CAT_9 }}</td>
                 <td >{{ $personnel->ABS_DATE_DEB }}</td>
                 <td >{{ $personnel->ABS_PERDEB_X }}M</td>

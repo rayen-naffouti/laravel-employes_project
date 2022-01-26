@@ -16,4 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::get('user', [App\Http\Controllers\AuthController::class, 'user']);
+// Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'create']);
+Route::resource('user', 'userController');
+
 Route::resource('personnels', 'PersonnelController');
