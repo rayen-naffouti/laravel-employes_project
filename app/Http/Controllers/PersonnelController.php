@@ -34,8 +34,8 @@ class PersonnelController extends Controller
                 ->where('personnels.PERS_MAT_95',$i)
                 ->get() 
                 ->count() ;
+               
         }
-        
       return view ('Personnel.index')->with('personnels', $personnels)->with('count', $count);
     }
  

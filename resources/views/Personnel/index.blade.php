@@ -1,36 +1,59 @@
 @extends('Personnel.layout')
-@section('content')
-@php
+ @php
     $i = 0;
 @endphp
-<div class="container mt-2 mb-2">
-        <a href="{{ url('/personnels/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
-            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-        </a>
-        
-        <table 
-        data-toggle="table"
-        data-pagination="true"
+
+    
+     <div class="main-container">    <!-- START: Main Container -->
+            
+            <div class="page-header">
+                <h1>Data Tables <small>Bootstrap Data Table</small></h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Tables</a></li>
+                    <li class="active">Data Table</li>
+                </ol>
+            </div>
+            
+            <div class="content-wrap">  <!--START: Content Wrap-->
+                
+                <div class="row">
+                    
+                    
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel title</h3>
+                                <div class="tools">
+                                    <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                                    <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>	                                
+                                </div>
+                            </div>
+                            
+                            <div class="panel-body">
+                            <a href="{{ url('/personnels/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
+                <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                </a>
+                                <table class="table table-bordered table-dataTable"
+                                data-toggle="table"
         data-search="true"
         data-search-align="left"
         data-show-columns="true"
         data-show-toggle="true"
-        data-show-refresh="true"
-        data-show-fullscreen="true"
-        data-show-pagination-switch="true"
+        data-show-fullscreen="true" 
         data-pagination-pre-text="previous"
         data-pagination-next-text="next"
         data-pagination-h-align="right"
         data-page-list="[10,20,30,0,50,All]"
-        >
+                >
         
-        <thead>
-            <tr>
+                <thead>
+                <tr>
                 <th rowspan="2" data-checkbox="true" data-valign="middle"></th>
                 <th colspan="9" data-align="center">Personnel List</th>
-            </tr>
+                </tr>
             
-            <tr>
+                <tr>
                 <th data-field="PERS_MAT_95" data-sortable="true" data-switchable="false">PERS_MAT_95</th>
                 <th data-field="PERS_MAT_ACT" data-sortable="true" data-switchable="false">PERS_MAT_ACT</th>
                 <th data-field="PERS_NOM" data-sortable="true">PERS_NOM</th>
@@ -40,10 +63,10 @@
                 <th data-field="PERS_CODE_QUALIF" data-sortable="true">QUALIF_LIBELLE</th>
                 <th data-field="PERS_NATURAGENT_93" data-sortable="true">NATAGENT_LIB_X50</th>
                 <th  data-sortable="true">action </th>
-            </tr>
-        </thead>
-            <tbody>
-            @foreach ($personnels as $personnel )
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($personnels as $personnel )
                 <tr>
                 <td></td>
                 <td >{{ $personnel->PERS_MAT_95 }}</td>
@@ -66,26 +89,22 @@
                 
                 </tr>
                 @php
-    $i = $i+1;
-@endphp
+               $i = $i+1;
+                @endphp
              
                 @endforeach
                         
-            </tbody>
+                </tbody>
             
-        </table>
-        
-    </div>
-    <a href="{{ url('/personnels/test') }}" class="btn btn-success btn-sm" title="Add New Contact">
-            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-        </a>
-    
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                    
+                
+            </div>  <!--END: Content Wrap-->
+            
+        </div>
   
-
-<!-- https://www.youtube.com/watch?v=uhdxAlzbiks -->
-    
-    @endsection
-
-
-
- 

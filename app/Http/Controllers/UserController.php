@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -23,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('Auth.register');
     }
 
     /**
@@ -34,7 +37,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' =>Hash::make($request->input('password')),
+            'role' => $request->input('role'),
+            'img' => $request->input('img')
+        ]);
+        return redirect('user'); 
     }
 
     /**

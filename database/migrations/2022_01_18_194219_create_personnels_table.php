@@ -22,9 +22,9 @@ class CreatePersonnelsTable extends Migration
             $table->enum('PERS_SEX_X', ['F', 'H']);
             
             $table->integer('PERS_CODE_QUALIF')->unsigned();
-            $table->foreign('PERS_CODE_QUALIF')->references('QUALIF_CODE')->on('qualifications')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('PERS_CODE_QUALIF')->references('QUALIF_CODE')->on('qualifications')->softDeletes();
             $table->integer('PERS_NATURAGENT_93')->unsigned();
-            $table->foreign('PERS_NATURAGENT_93')->references('NATAGENT_CODE_93')->on('natureagents')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('PERS_NATURAGENT_93')->references('NATAGENT_CODE_93')->on('natureagents')->softDeletes();
             $table->timestamps();
         });
     }

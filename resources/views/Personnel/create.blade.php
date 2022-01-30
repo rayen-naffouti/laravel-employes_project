@@ -1,5 +1,31 @@
 @extends('Personnel.layout')
-@section('content')
+<div class="main-container">    <!-- START: Main Container -->
+            
+            <div class="page-header">
+                <h1>Data Tables <small>Bootstrap Data Table</small></h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Tables</a></li>
+                    <li class="active">Data Table</li>
+                </ol>
+            </div>
+            
+            <div class="content-wrap">  <!--START: Content Wrap-->
+                
+                <div class="row">
+                    
+                    
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Panel title</h3>
+                                <div class="tools">
+                                    <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
+                                    <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>	                                
+                                </div>
+                            </div>
+                            
+                            <div class="panel-body">
  
 <div class="card">
   <div class="card-header">Add Personnel</div>
@@ -28,4 +54,13 @@
   </div>
 </div>
  
-@stop
+</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                    
+                
+            </div>  <!--END: Content Wrap-->
+            
+        </div>
