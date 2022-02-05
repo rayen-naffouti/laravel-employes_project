@@ -1,4 +1,4 @@
-@extends('Personnel.layout')
+@extends('layout')
  @php
     $i = 0;
 @endphp
@@ -49,7 +49,6 @@
         
                 <thead>
                 <tr>
-                <th rowspan="2" data-checkbox="true" data-valign="middle"></th>
                 <th colspan="9" data-align="center">Personnel List</th>
                 </tr>
             
@@ -68,7 +67,6 @@
                 <tbody>
                 @foreach ($personnels as $personnel )
                 <tr>
-                <td></td>
                 <td >{{ $personnel->PERS_MAT_95 }}</td>
                 <td >{{ $personnel->PERS_MAT_ACT }}</td>
                 <td >{{ $personnel->PERS_NOM }}</td>
@@ -107,4 +105,6 @@
             </div>  <!--END: Content Wrap-->
             
         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="../js/bootstrap-table.min.js"></script> 
   

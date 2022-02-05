@@ -17,6 +17,10 @@ class PersonnelController extends Controller
     //     dd($table);
     //     return view ('Personnel.index');
     // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     
     public function index()
@@ -93,8 +97,5 @@ class PersonnelController extends Controller
         return redirect('personnels')->with('flash_message', 'personnel deleted!');  
     }
      
-    public function test()
-    {
-        return view('Personnel.see');
-    }
+    
 }

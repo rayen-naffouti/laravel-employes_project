@@ -1,4 +1,4 @@
-@extends('Personnel.layout')
+@extends('layout')
 <div class="main-container">    <!-- START: Main Container -->
             
             <div class="page-header">

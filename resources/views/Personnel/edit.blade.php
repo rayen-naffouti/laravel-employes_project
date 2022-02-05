@@ -1,4 +1,4 @@
-@extends('Personnel.layout')
+@extends('layout')
 @section('content')
  
 <div class="card">

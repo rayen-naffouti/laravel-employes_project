@@ -12,6 +12,6 @@ class AbsenceTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Absence::class,10)->create();
+        factory(Absence::class,60)->create();
     }
 }

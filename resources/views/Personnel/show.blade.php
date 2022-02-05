@@ -1,4 +1,4 @@
-@extends('Personnel.layout')
+@extends('layout')
 
 <div class="main-container">    <!-- START: Main Container -->
             
@@ -89,3 +89,5 @@
             </div>  <!--END: Content Wrap-->
             
         </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../js/bootstrap-table.min.js"></script> 
