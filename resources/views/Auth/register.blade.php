@@ -76,7 +76,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Login | Big Ben Admin</title>
+    <title>Register </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="Prakasam Mathaiyan">
     <meta name="description" content="">
@@ -94,9 +94,80 @@
     
     <link rel="stylesheet" type="text/css" href="assets/css/lib/page-login.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style-default.css">
-</head>
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('./assets/plugins/bootstrap/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('./assets/plugins/monthly/css/monthly.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('./assets/plugins/emojionearea/emojionearea.min.css') }} ">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('./assets/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('./assets/css/style-default.css') }} ">
+</head>
+<style>
+    
+</style>
 <body>
+<header class="header-top navbar fixed-top">
+            
+            <div class="top-bar">   <!-- START: Responsive Search -->
+                <div class="container">
+                    <div class="main-search">
+                        <div class="input-wrap">
+                            <input class="form-control" type="text" placeholder="Search Here...">
+                            <a href="page-search.html"><i class="sli-magnifier"></i></a>
+                        </div>
+                        <span class="close-search search-toggle"><i class="ti-close"></i></span>
+                    </div>
+                </div>
+            </div>  <!-- END: Responsive Search -->
+
+            
+            <div class="collapse navbar-collapse" id="headerNavbarCollapse">
+                
+                <ul class="nav navbar-nav">
+                    
+                <li class="hidden-xs">
+                        <a href="{{ url('/') }}" class="sidenav-size-toggle">
+                            <i class="di di-controls-back" style="width: 50px;font-size: 30px; "></i>
+                        </a>
+                    </li>
+                    
+
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                    
+                    <li class="user-profile dropdown">
+                        <a href="javascript:;" class="clearfix dropdown-toggle" data-toggle="dropdown">
+                            <img src="demo/users/téléchargé.jpg" alt="" class="hidden-sm">
+                            <div class="user-name">{{ Auth::user()->name }} <small class="fa fa-angle-down"></small></div>
+                        </a>
+                        <ul class="dropdown-menu dropdown-animated pop-effect" role="menu">
+                            <li><a href="{{ url('/profil') }}"><i class="sli-user"></i> My Profile</a></li>
+                            <li><a href="{{ url('/register') }}"><i class="sli-calendar"></i> Calendar</a></li>
+                            <li role="#" class="divider"></li>
+                            <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                            
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                     <i class="sli-logout"></i>
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                
+            </div><!-- END: Navbar-collapse -->
+            
+        </header>
 
     <div class="container">
         
@@ -123,16 +194,16 @@
                         <li><a href="#"><i class="fa fa-twitter hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest-p hvr-buzz-out" aria-hidden="true"></i></a></li>
+                        <!-- <li><a href="#"><i class="fa fa-pinterest-p hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-skype hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-wordpress hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-vimeo hvr-buzz-out" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo hvr-buzz-out" aria-hidden="true"></i></a></li> -->
                     </ul>
                     
-                    <ul class="list-inline text-center">
+                    <!-- <ul class="list-inline text-center">
                         <li><a href="#"><img src="assets/images/appstore.png" class="img-responsive app"></a></li>
                         <li><a href="#"><img src="assets/images/googleplay.png" class="img-responsive app"></a></li>
-                    </ul>
+                    </ul> -->
                 </div>
                 
                 <div class="col-xs-12 col-md-4 col-sm-6 col-lg-4">
@@ -140,7 +211,7 @@
                     <div class="blue-line sm normal"></div>
                     
                     <div class="signup-box">
-                        <div class="logo"><img src="assets/images/logo-c.svg" alt="" style="height: 40px;"></div>
+                        <div class="logo"><img src="assets/images/logo2.jpg" alt="" style="height: 40px;"></div>
 
  
                         <!-- <form method="POST" action="{{ route('register') }}">
@@ -211,6 +282,7 @@
                     <form method="POST" action="{{ route('register') }}">
                             @csrf
                             
+                            
 
                             <div class="form-group">
                                 <input type="text" name="name" class="form-control" placeholder="User Name">
@@ -249,19 +321,19 @@
 
                         </form>
                         
-                        <ul class="list-inline text-center social-signup">
+                        <!-- <ul class="list-inline text-center social-signup">
                             <li>
                                 <a class="btn btn-social btn-facebook" href="#"><span class="fa fa-facebook"></span>Login Facebook</a>
                             </li>
                             <li>
                                 <a class="btn btn-social btn-linkedin" href="#"><span class="fa fa-linkedin"></span>Login LinkedIn</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                     
                     <br>
                     <div class="signup-box">
-                        <p class="signac animated flipInX">If you have an account? <a href="user-login.php">Sign in</a></p>
+                        <p class="signac animated flipInX">If you have an account? <a href="{{ route('login') }}">Sign in</a></p>
                     </div>
                     
                     <div class="blue-line lg normal"></div>

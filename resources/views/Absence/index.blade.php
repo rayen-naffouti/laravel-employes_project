@@ -1,7 +1,4 @@
 @extends('layout')
- @php
-    $i = 0;
-@endphp
 
 
     
@@ -24,7 +21,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">Panel title</h3>
+                                <h3 class="panel-title">Absences List</h3>
                                 <div class="tools">
                                     <a class="btn-link collapses panel-collapse" href="javascript:;"></a>
                                     <a class="btn-link reload" href="javascript:;"><i class="ti-reload"></i></a>	                                
@@ -32,7 +29,7 @@
                             </div>
                             
                             <div class="panel-body">
-                            <a href="{{ url('/personnels/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
+                            <a href="{{ url('/absence/create') }}" class="btn btn-success btn-sm" title="Add New Contact">
                 <i class="fa fa-plus" aria-hidden="true"></i> Add New
                 </a>
                                 <table class="table table-bordered table-dataTable"
@@ -50,49 +47,54 @@
         
                 <thead>
                 <tr>
-                <th colspan="8" data-align="center">Personnels List</th>
+                <th colspan="9" data-align="center">Absences List</th>
                 </tr>
             
                 <tr>
-                <th data-field="PERS_MAT_95" data-sortable="true" data-switchable="false">Matricule</th>
-                <th data-field="PERS_NOM" data-sortable="true">First Name</th>
-                <th data-field="PERS_PRENOM" data-sortable="true">Last Name</th>
-                <th data-field="PERS_DATE_NAIS" data-sortable="true">Date of Birth</th>
-                <th data-field="PERS_SEX_X" data-sortable="true">Sex</th>
-                <th data-field="PERS_CODE_QUALIF" data-sortable="true">Qualification</th>
-                <th data-field="PERS_NATURAGENT_93" data-sortable="true">Agent Nature</th>
-                <th  data-sortable="true">action </th>
+                <th data-field="ABS_MAT_95" data-sortable="true" data-switchable="false">Matricule</th>
+                <th data-field="PERS_NOM + PERS_PRENOM " data-sortable="true" data-switchable="false">Full Name</th>
+                <th data-field="LIBELLE_ABS" data-sortable="true">Absence Nature</th>
+                <th data-field="ABS_DATE_DEB" data-sortable="true">Start date</th>
+                <th data-field="ABS_PERDEB_X" data-sortable="true">Start Period</th>
+                <th data-field="ABS_DATE_FIN" data-sortable="true">End date</th>
+                <th data-field="ABS_PERFIN_X" data-sortable="true">Period End</th>
+                <th data-field="ABS_NBRJOUR_93 " data-sortable="true">Number of days</th>
+                 <th data-field="ABS_CUMULE_9 " data-sortable="true">Accumulation</th>
+              <!--  <th  data-sortable="true">action </th> -->
                 </tr>
                 </thead>
                 <tbody>
-                @foreach ($personnels as $personnel )
+                @foreach ($absences as $absence )
                 <tr>
-                <td >{{ $personnel->PERS_MAT_95 }}</td>
-                <td >{{ $personnel->PERS_NOM }}</td>
-                <td >{{ $personnel->PERS_PRENOM }}</td>
-                <td >{{ $personnel->PERS_DATE_NAIS }}</td>
-                @if ($personnel->PERS_SEX_X == 'H')
-                <td >Homme</td>
+                <td >{{ $absence->ABS_MAT_95  }}</td>
+                <td >{{ $absence->PERS_NOM  }} {{ $absence->PERS_PRENOM  }}</td>
+                <td >{{ $absence->LIBELLE_ABS  }}</td>
+                <td >{{ $absence->ABS_DATE_DEB  }}</td>
+                @if ($absence->ABS_PERDEB_X == 'P')
+                    <td >PM</td>
                 @else
-                <td >Femme</td>
+                    <td >AM</td>
                 @endif
-               
-                <td > {{ $personnel->QUALIF_LIBELLE }}</td>
-                <td >{{ $personnel->NATAGENT_LIB_X50 }}</td>
-                <td>
-                    <a href="{{ url('/personnels/' . $personnel->PERS_MAT_95) }}" title="View "><button class="btn btn-info btn-sm"> Absence ({{ $count[$i] }})</button></a> 
-                    <a href="{{ url('/personnels/' . $personnel->PERS_MAT_95 . '/edit') }}" title="Edit "><button class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></button></a>
-                    <form method="POST" action="{{ url('/personnels' . '/' . $personnel->PERS_MAT_95) }}" accept-charset="UTF-8" style="display:inline">
+                    <td > {{ $absence->ABS_DATE_FIN  }}</td>
+                @if ($absence->ABS_PERFIN_X == 'P')
+                    <td >PM</td>
+                @else
+                    <td >AM</td>
+                @endif
+                <td >{{ $absence->ABS_NBRJOUR_93  }}</td>
+                <td >{{ $absence->ABS_CUMULE_9  }}</td>
+                <!-- <td>
+                    <a href="{{ url('/personnels/' . $absence->ABS_MAT_95) }}" title="View "><button class="btn btn-info btn-sm"> View </button></a> 
+                    <a href="{{ url('/personnels/' . $absence->ABS_MAT_95 . '/edit') }}" title="Edit "><button class="btn btn-primary btn-sm"> Edit</button></a>
+                    <form method="POST" action="{{ url('/personnels' . '/' . $absence->ABS_MAT_95) }}" accept-charset="UTF-8" style="display:inline">
                         {{ method_field('DELETE') }}
                         {{ csrf_field() }}
-                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash"></i></button>
+                        <button type="submit" class="btn btn-danger btn-sm" title="Delete Contact" onclick="return confirm(&quot;Confirm delete?&quot;)">Delete</button>
                     </form> 
-                </td> 
+                </td>  -->
                 
                 </tr>
-                @php
-               $i = $i+1;
-                @endphp
+                
              
                 @endforeach
                         

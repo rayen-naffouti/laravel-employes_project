@@ -19,6 +19,7 @@
 </head>
 <body>
     
+    
     <div class="wrapper has-footer">
         
         <header class="header-top navbar fixed-top">
@@ -40,9 +41,9 @@
                     <i class="ti-align-left"></i>
                 </button>
 
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="assets/images/logo-w.svg">
-                    <span>ETAP</span>
+                <a class="navbar-brand" href="{{ url('/') }}" style="margin-top: 10px">
+                    <img src="assets/images/logo.png" style="margin-right : 30px;">
+                    <span style="margin-top: 30px;color:#0452a1;font-size: xx-large">ETAP</span>
                 </a>
 
                 <ul class="nav navbar-nav-xs">  <!-- START: Responsive Top Right tool bar -->
@@ -83,17 +84,16 @@
                         </div>
                     </li>
                     
+                    
                     <li class="user-profile dropdown">
                         <a href="javascript:;" class="clearfix dropdown-toggle" data-toggle="dropdown">
-                            <img src="demo/users/img-user-01.jpg" alt="" class="hidden-sm">
+                            <img src="demo/users/téléchargé.jpg" alt="" class="hidden-sm">
                             <div class="user-name">{{ Auth::user()->name }} <small class="fa fa-angle-down"></small></div>
                         </a>
                         <ul class="dropdown-menu dropdown-animated pop-effect" role="menu">
                             <li><a href="{{ url('/profil') }}"><i class="sli-user"></i> My Profile</a></li>
-                            <li><a href="#"><i class="sli-calendar"></i> Calendar</a></li>
-                            <li><a href="#"><i class="fa fa-envelope-o"></i> Inbox</a></li>
+                            <li><a href="{{ url('/register') }}"><i class="sli-users"></i> Register User</a></li>
                             <li role="#" class="divider"></li>
-                            <li><a href="#"><i class="sli-question"></i> FAQ's</a></li>
                             <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                             
@@ -136,9 +136,8 @@
                         </a>
                         <div class="sub-menu collapse secondary" id="submenuOne">
                             <ul>
-                                <li><a href="{{ url('/personnels') }}">Basic Table</a></li>
+                                <li><a href="{{ url('/personnels') }}">Personnels List</a></li>
                                 <li><a href="{{ url('/personnels/create') }}">Create Personnel</a></li>
-                                <li><a href="{{ url('/personnels') }}">Edit Personnel</a></li>
                             </ul>
                         </div>
                     </li>
@@ -151,9 +150,8 @@
                         </a>
                         <div class="sub-menu collapse secondary" id="submenuTwo">
                             <ul>
-                                <li><a href="#">Basic Table</a></li>
-                                <li><a href="#">Create Absence</a></li>
-                                <li><a href="#">Edit Absence</a></li>
+                                <li><a href="{{ url('/absence') }}">Absences List</a></li>
+                                <li><a href="{{ url('/absence/create') }}">Create Absence</a></li>
                             </ul>
                         </div>
                     </li>
@@ -176,10 +174,7 @@
     @yield('content')
 </div>
         
-        <footer class="footer"> <!-- START: Footer -->
-            &copy; 2016 <b>Big Ben</b> Admin
-            
-        </footer>   <!-- END: Footer -->
+       
         
     </div>  <!-- END: wrapper -->
    

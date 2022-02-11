@@ -18,32 +18,28 @@
                 this.$todoData = [
                     {
                         'id': '1',
-                        'text': 'Design One page theme',
+                        'text': 'Add personnel',
                         'done': false
                     },
                     {
                         'id': '2',
-                        'text': 'Build a js based app',
+                        'text': 'Check Absences',
                         'done': true
                     },
                     {
                         'id': '3',
-                        'text': 'Creating component page',
+                        'text': 'Check personnels',
                         'done': true
                     },
-                    {
-                        'id': '4',
-                        'text': 'Testing??',
-                        'done': true
-                    },
+                    
                     {
                         'id': '5',
-                        'text': 'Hehe!! This is looks cool!',
+                        'text': 'Add absences',
                         'done': false
                     },
                     {
                         'id': '6',
-                        'text': 'Build an angular app',
+                        'text': 'Add indexes in pivot table',
                         'done': true
                     }];
 

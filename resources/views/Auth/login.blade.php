@@ -73,7 +73,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Login | Big Ben Admin</title>
+    <title>Login </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="Prakasam Mathaiyan">
     <meta name="description" content="">
@@ -120,10 +120,10 @@
                         <li><a href="#"><i class="fa fa-twitter hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-google-plus hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-pinterest-p hvr-buzz-out" aria-hidden="true"></i></a></li>
+                        <!-- <li><a href="#"><i class="fa fa-pinterest-p hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-skype hvr-buzz-out" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-wordpress hvr-buzz-out" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-vimeo hvr-buzz-out" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo hvr-buzz-out" aria-hidden="true"></i></a></li> -->
                     </ul>
                 </div>
                 
@@ -132,7 +132,9 @@
                     <div class="blue-line sm normal"></div>
                     
                     <div class="signup-box">
-                        <div class="logo"><img src="assets/images/logo-c.svg" alt="" style="height: 40px;"></div>
+                        <div class="logo"><img src="assets/images/logo2.jpg" alt="" style="height: 40px;">
+                        
+                    </div>
                         
                         
 
